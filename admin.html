@@ -1,0 +1,724 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+
+  <title>Wonder Tour Admin Panel</title>
+  <link rel="icon" href="images-1/favicon.ico" type="image/x-icon">
+  <meta name=”robots” content=”noindex,nofollow”>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+
+
+  <style>
+    @import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+    .btn {
+      display: inline-block;
+      *display: inline;
+      *zoom: 1;
+      padding: 4px 10px 4px;
+      margin-bottom: 0;
+      font-size: 13px;
+      line-height: 18px;
+      color: #333333;
+      text-align: center;
+      text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+      vertical-align: middle;
+      background-color: #f5f5f5;
+      background-image: -moz-linear-gradient(top, #ffffff, #e6e6e6);
+      background-image: -ms-linear-gradient(top, #ffffff, #e6e6e6);
+      background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e6e6e6));
+      background-image: -webkit-linear-gradient(top, #ffffff, #e6e6e6);
+      background-image: -o-linear-gradient(top, #ffffff, #e6e6e6);
+      background-image: linear-gradient(top, #ffffff, #e6e6e6);
+      background-repeat: repeat-x;
+      filter: progid:dximagetransform.microsoft.gradient(startColorstr=#ffffff, endColorstr=#e6e6e6, GradientType=0);
+      border-color: #e6e6e6 #e6e6e6 #e6e6e6;
+      border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+      border: 1px solid #e6e6e6;
+      -webkit-border-radius: 4px;
+      -moz-border-radius: 4px;
+      border-radius: 4px;
+      -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+      -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+      cursor: pointer;
+      *margin-left: .3em;
+    }
+
+    .btn:hover,
+    .btn:active,
+    .btn.active,
+    .btn.disabled,
+    .btn[disabled] {
+      background-color: #e6e6e6;
+    }
+
+    .btn-large {
+      padding: 9px 14px;
+      font-size: 15px;
+      line-height: normal;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      border-radius: 5px;
+    }
+
+    .btn:hover {
+      color: #333333;
+      text-decoration: none;
+      background-color: #e6e6e6;
+      background-position: 0 -15px;
+      -webkit-transition: background-position 0.1s linear;
+      -moz-transition: background-position 0.1s linear;
+      -ms-transition: background-position 0.1s linear;
+      -o-transition: background-position 0.1s linear;
+      transition: background-position 0.1s linear;
+    }
+
+    .btn-primary,
+    .btn-primary:hover {
+      text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+      color: #ffffff;
+    }
+
+    .btn-primary.active {
+      color: rgba(255, 255, 255, 0.75);
+    }
+
+    .btn-primary {
+      background-color: #4a77d4;
+      background-image: -moz-linear-gradient(top, #6eb6de, #4a77d4);
+      background-image: -ms-linear-gradient(top, #6eb6de, #4a77d4);
+      background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#6eb6de), to(#4a77d4));
+      background-image: -webkit-linear-gradient(top, #6eb6de, #4a77d4);
+      background-image: -o-linear-gradient(top, #6eb6de, #4a77d4);
+      background-image: linear-gradient(top, #6eb6de, #4a77d4);
+      background-repeat: repeat-x;
+      filter: progid:dximagetransform.microsoft.gradient(startColorstr=#6eb6de, endColorstr=#4a77d4, GradientType=0);
+      border: 1px solid #3762bc;
+      text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.5);
+    }
+
+    .btn-primary:hover,
+    .btn-primary:active,
+    .btn-primary.active,
+    .btn-primary.disabled,
+    .btn-primary[disabled] {
+      filter: none;
+      background-color: #4a77d4;
+    }
+
+    .btn-block {
+      width: 100%;
+      display: block;
+    }
+
+    * {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      -ms-box-sizing: border-box;
+      -o-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+
+    html {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    body {
+      overflow-x: scroll;
+      overflow-y: scroll;
+      width: 100%;
+      height: 100%;
+      font-family: Montserrat, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      background: #092756;
+      background: -moz-radial-gradient(0% 100%, ellipse cover, rgba(104, 128, 138, .4) 10%, rgba(138, 114, 76, 0) 40%), -moz-linear-gradient(top, rgba(57, 173, 219, .25) 0%, rgba(42, 60, 87, .4) 100%), -moz-linear-gradient(-45deg, #670d10 0%, #092756 100%);
+      background: -webkit-radial-gradient(0% 100%, ellipse cover, rgba(104, 128, 138, .4) 10%, rgba(138, 114, 76, 0) 40%), -webkit-linear-gradient(top, rgba(57, 173, 219, .25) 0%, rgba(42, 60, 87, .4) 100%), -webkit-linear-gradient(-45deg, #670d10 0%, #092756 100%);
+      background: -o-radial-gradient(0% 100%, ellipse cover, rgba(104, 128, 138, .4) 10%, rgba(138, 114, 76, 0) 40%), -o-linear-gradient(top, rgba(57, 173, 219, .25) 0%, rgba(42, 60, 87, .4) 100%), -o-linear-gradient(-45deg, #670d10 0%, #092756 100%);
+      background: -ms-radial-gradient(0% 100%, ellipse cover, rgba(104, 128, 138, .4) 10%, rgba(138, 114, 76, 0) 40%), -ms-linear-gradient(top, rgba(57, 173, 219, .25) 0%, rgba(42, 60, 87, .4) 100%), -ms-linear-gradient(-45deg, #670d10 0%, #092756 100%);
+      background: -webkit-radial-gradient(0% 100%, ellipse cover, rgba(104, 128, 138, .4) 10%, rgba(138, 114, 76, 0) 40%), linear-gradient(to bottom, rgba(57, 173, 219, .25) 0%, rgba(42, 60, 87, .4) 100%), linear-gradient(135deg, #670d10 0%, #092756 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#3E1D6D', endColorstr='#092756', GradientType=1);
+    }
+
+    .login {
+      position: absolute;
+      display: none;
+      top: 50%;
+      left: 50%;
+      margin: -150px 0 0 -150px;
+      width: 300px;
+      height: 300px;
+    }
+
+    .login h1 {
+      color: #fff;
+      text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      letter-spacing: 1px;
+      text-align: center;
+    }
+
+    input {
+      width: 100%;
+      margin-bottom: 10px;
+      background: rgba(0, 0, 0, 0.3);
+      border: none;
+      outline: none;
+      padding: 10px;
+      font-size: 13px;
+      color: #fff;
+      text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(0, 0, 0, 0.3);
+      border-radius: 4px;
+      box-shadow: inset 0 -5px 45px rgba(100, 100, 100, 0.2), 0 1px 1px rgba(255, 255, 255, 0.2);
+      -webkit-transition: box-shadow .5s ease;
+      -moz-transition: box-shadow .5s ease;
+      -o-transition: box-shadow .5s ease;
+      -ms-transition: box-shadow .5s ease;
+      transition: box-shadow .5s ease;
+    }
+
+    input:focus {
+      box-shadow: inset 0 -5px 45px rgba(100, 100, 100, 0.4), 0 1px 1px rgba(255, 255, 255, 0.2);
+    }
+
+    #leftHandSide {
+      display: block;
+      float: left;
+
+      padding: 0 0px 10px 0;
+
+    }
+
+    #rightHandSide {
+      display: block;
+      padding: 0 15px 10px 0px;
+
+      float: right;
+    }
+
+    #extactLoginTime {
+      display: flex;
+      justify-content: center;
+      padding: 0 15px 10px 0px;
+    }
+
+    button {
+      margin-top: 10px;
+    }
+
+
+    .itemCount {
+      color: #000000;
+    }
+
+    @import "https://fonts.googleapis.com/css?family=Montserrat:300,400,700";
+
+
+    .rwd-table {
+
+      box-shadow: 1px 1px 10px #999;
+      display: table;
+      margin-left: auto;
+      margin-right: auto;
+
+    }
+
+    .rwd-table tr {
+      border-top: 1px solid #ddd;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .rwd-table th {
+      display: none;
+    }
+
+    .rwd-table td {
+      display: block;
+    }
+
+    .rwd-table td:first-child {
+      padding-top: 0.5em;
+    }
+
+    .rwd-table td:last-child {
+      padding-bottom: 0.5em;
+    }
+
+    .rwd-table td:before {
+      content: attr(data-th) ": ";
+      font-weight: bold;
+      width: 6.5em;
+      display: inline-block;
+    }
+
+    @media (min-width: 480px) {
+      .rwd-table td:before {
+        display: none;
+      }
+    }
+
+    .rwd-table th,
+    .rwd-table td {
+      text-align: left;
+    }
+
+    @media (min-width: 480px) {
+
+      .rwd-table th,
+      .rwd-table td {
+        display: table-cell;
+        padding: 0.25em 0.5em;
+      }
+
+      .rwd-table th:first-child,
+      .rwd-table td:first-child {
+        padding-left: 0;
+      }
+
+      .rwd-table th:last-child,
+      .rwd-table td:last-child {
+        padding-right: 0;
+      }
+    }
+
+    .tableHeading {
+      font-weight: normal;
+      letter-spacing: -1px;
+      color: #12A86B;
+      text-align: center;
+    }
+
+    .rwd-table {
+      background: #34495e;
+      color: #fff;
+      border-radius: 0.4em;
+    }
+
+    .rwd-table tr {
+      border-color: #46637f;
+    }
+
+    .rwd-table th,
+    .rwd-table td {
+      margin: 0.5em 1em;
+    }
+
+    @media (min-width: 480px) {
+
+      .rwd-table th,
+      .rwd-table td {
+        padding: 1em !important;
+      }
+    }
+
+    .rwd-table th,
+    .rwd-table td:before {
+      color: #dd5;
+    }
+
+    #mutipleDiv {
+      display: none;
+    }
+
+    #submitMutiple {
+      padding: 10px;
+      width: 150px;
+      font-size: 14px;
+      margin: 50px auto;
+      display: block;
+    }
+
+    textarea {
+
+      /* box-sizing: padding-box; */
+      overflow: hidden;
+      /* demo only: */
+      padding: 10px;
+      height: 200px;
+      width: 600px;
+      overflow-y: scroll;
+      font-size: 14px;
+      margin: 50px auto;
+      display: block;
+      border-radius: 10px;
+      border: 6px solid #556677;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="loginDiv" class="login">
+    <h1>Login</h1>
+    <form id="contact-form" method="post">
+      <input id="Username" type="text" name="Username" placeholder="Username" required="required" />
+      <input id="Password" type="password" name="Password" placeholder="Password" required="required" />
+      <button type="submit" class="btn btn-primary btn-block btn-large">Let me in.</button>
+    </form>
+  </div>
+
+  <div id="dbDiv"></div>
+
+
+
+  <script>
+
+
+
+    function createdTimeStamp() {
+      var d6 = new Date()
+      d6.setHours(d6.getHours() + (5))
+      d6.setMinutes(d6.getMinutes() + 30)
+      return d6.toISOString().slice(0, 19).replace('T', ' ');
+
+    }
+
+    var exactLoginTime = createdTimeStamp()
+
+
+    function createdTimeStampPlus12Hour() {
+      var d1 = new Date()
+      d1.setHours(d1.getHours() + (5 + 12))
+      d1.setMinutes(d1.getMinutes() + 30)
+
+      return d1.toISOString().slice(0, 19).replace('T', ' ');
+
+    }
+
+    var loginTimePlus12Hour = createdTimeStampPlus12Hour()
+
+
+
+
+    $(document).ready(function () {
+      
+      console.log("check if sesson present")
+
+       checkIfSessionPresent();
+
+    });
+
+    function checkIfSessionPresent() {
+
+      sessionRequest = jQuery.ajax({
+        type: 'GET',
+        url: 'http://localhost/wonder_tour/database/admin-database-connector.php',
+        dataType: 'text',
+        cache: false,
+        data: { "CallFunction": "SessionPresent" }
+        , success: function (ifSessionPresent) {
+
+          if (!ifSessionPresent) {
+            document.getElementById("loginDiv").style.display = "block";
+
+          } else {
+            document.getElementById("loginDiv").style.display = "none";
+
+            $('#dbDiv').html(ifSessionPresent);
+            document.getElementById("loginTime").innerHTML = exactLoginTime.split(" ")[1];
+//            getallDataCount()
+          }
+        }
+      });
+
+
+
+    $('form').submit(function (event) {
+      event.preventDefault();
+     console.log("here check")
+    checkIfLoginInfoMatch()
+    });
+    
+
+
+
+    function checkIfLoginInfoMatch() {
+
+      var userName = document.getElementById('Username').value
+      var password = document.getElementById('Password').value
+
+      detailRequest = jQuery.ajax({
+        type: 'GET',
+        url: 'http://localhost/wonder_tour/database/admin-database-connector.php',
+        dataType: 'text',
+        cache: false,
+        data: { "userName": userName, "password": password, "CallFunction": "LoginDetailMatch" }
+        , success: function (checkIfLoginMatch) {
+          if (checkIfLoginMatch == 'false')
+
+            alert("Sorry Details Not Match ")
+          else{
+            window.location.reload();   
+           }
+          
+
+        }
+      });
+
+      // Callback handler that will be called on success
+      detailRequest.done(function (response, textStatus, jqXHR) {
+        // Log a message to the console
+
+
+
+      });
+
+      // Callback handler that will be called on failure
+      detailRequest.fail(function (jqXHR, textStatus, errorThrown) {
+        // Log the error to the console
+        console.error(
+          "The following error occurred: " +
+          textStatus, errorThrown
+        );
+      });
+
+      // Callback handler that will be called regardless
+      // if the request failed or succeeded
+      detailRequest.always(function () {
+        // Reenable the inputs
+
+      });
+    }
+
+
+
+      // Callback handler that will be called on success
+      sessionRequest.done(function (response, textStatus, jqXHR) {
+        // Log a message to the console
+
+
+      });
+
+      // Callback handler that will be called on failure
+      sessionRequest.fail(function (jqXHR, textStatus, errorThrown) {
+        // Log the error to the console
+        console.error(
+          "The following error occurred: " +
+          textStatus, errorThrown
+        );
+      });
+
+      // Callback handler that will be called regardless
+      // if the request failed or succeeded
+      sessionRequest.always(function () {
+        // Reenable the inputs
+
+      });
+    }
+
+    
+    
+
+
+
+    function destroySessions() {
+
+      sessionRequest = jQuery.ajax({
+        type: 'GET',
+        url: '/canva-price-table/database/news-letter-admin-database-connector.php',
+        dataType: 'text',
+        cache: false,
+        data: { "CallFunction": "DestroySessions" }
+        , success: function (destroySessions) {
+
+          window.location.reload();
+        }
+      });
+
+      // Callback handler that will be called on success
+      sessionRequest.done(function (response, textStatus, jqXHR) {
+        // Log a message to the console
+
+
+      });
+
+      // Callback handler that will be called on failure
+      sessionRequest.fail(function (jqXHR, textStatus, errorThrown) {
+        // Log the error to the console
+        console.error(
+          "The following error occurred: " +
+          textStatus, errorThrown
+        );
+      });
+
+      // Callback handler that will be called regardless
+      // if the request failed or succeeded
+      sessionRequest.always(function () {
+        // Reenable the inputs
+
+      });
+    }
+
+
+    function getallDataCount() {
+
+
+      allDataCountAjax = jQuery.ajax({
+        type: 'GET',
+        url: '/canva-price-table/database/news-letter-admin-database-data-connector.php',
+        dataType: 'text',
+        cache: false,
+        data: {  "CallFunction": "DataCount" }
+        , success: function (data) {
+          const myArray = data.split(",");
+
+          document.getElementById("contactSupport").innerHTML = "Contact & Support (" + myArray[0] + ") "
+
+
+          document.getElementById("allemail").innerHTML = "NewsLetter Email (" + myArray[1] + ") "
+
+
+
+
+        }
+      });
+
+      // Callback handler that will be called on success
+      allDataCountAjax.done(function (response, textStatus, jqXHR) {
+        // Log a message to the console
+
+
+
+      });
+
+      // Callback handler that will be called on failure
+      allDataCountAjax.fail(function (jqXHR, textStatus, errorThrown) {
+        // Log the error to the console
+        console.error(
+          "The following error occurred: " +
+          textStatus, errorThrown
+        );
+      });
+
+      // Callback handler that will be called regardless
+      // if the request failed or succeeded
+      allDataCountAjax.always(function () {
+        // Reenable the inputs
+
+      });
+    }
+
+    function showOrHideTextArea() {
+      if ($('#mutipleDiv').css('display') === "block")
+        document.getElementById("mutipleDiv").style.display = "none";
+      else if ($('#mutipleDiv').css('display') === "none") {
+        document.getElementById("mutipleDiv").style.display = "block";
+      }
+      getOnlyEmail()
+
+
+    }
+
+    function getOnlyEmail() {
+
+
+allDataCountAjax = jQuery.ajax({
+  type: 'GET',
+  url: '/canva-price-table/database/news-letter-admin-database-data-connector.php',
+  dataType: 'text',
+  cache: false,
+  data: { "CallFunction": "GetOnlyEmail" }
+  , success: function (data) {
+    const myArray = data.split("||");
+    var showElement =  document.getElementById("textAreaId")
+    for (const iterator of myArray) {
+      showElement.innerHTML +=  iterator + "\n" 
+
+    }
+    
+    
+
+
+  }
+});
+
+// Callback handler that will be called on success
+allDataCountAjax.done(function (response, textStatus, jqXHR) {
+  // Log a message to the console
+
+
+
+});
+
+// Callback handler that will be called on failure
+allDataCountAjax.fail(function (jqXHR, textStatus, errorThrown) {
+  // Log the error to the console
+  console.error(
+    "The following error occurred: " +
+    textStatus, errorThrown
+  );
+});
+
+// Callback handler that will be called regardless
+// if the request failed or succeeded
+allDataCountAjax.always(function () {
+  // Reenable the inputs
+
+});
+}
+
+    function copyAllMutipleEmail() {
+      let textarea = document.getElementById("textAreaId");
+      textarea.select();
+      document.execCommand("copy");
+
+    }
+
+    function getallDataTable(dataName) {
+
+      allDataTableAjax = jQuery.ajax({
+        type: 'GET',
+        url: '/canva-price-table/database/news-letter-admin-database-data-connector.php',
+        dataType: 'text',
+        cache: false,
+        data: { "CallFunction": "DataTable", "DataName": dataName }
+        , success: function (html) {
+          $('#table').html(html);
+
+        }
+      });
+
+      // Callback handler that will be called on success
+      allDataTableAjax.done(function (response, textStatus, jqXHR) {
+        // Log a message to the console
+
+
+
+      });
+
+      // Callback handler that will be called on failure
+      allDataTableAjax.fail(function (jqXHR, textStatus, errorThrown) {
+        // Log the error to the console
+        console.error(
+          "The following error occurred: " +
+          textStatus, errorThrown
+        );
+      });
+
+      // Callback handler that will be called regardless
+      // if the request failed or succeeded
+      allDataTableAjax.always(function () {
+        // Reenable the inputs
+
+      });
+    }
+  
+  
+
+
+
+
+  </script>
+
+
+</body>
+
+</html>
