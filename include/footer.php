@@ -22,7 +22,7 @@
                                         <li>
                                             <div class="unit">
                                                 <div class="unit-left"><span class="icon fa fa-location-arrow"></span></div>
-                                                <div class="unit-body"><a class="link-location" href="#"> Railway Rd, near chitra cinema, Sharvan Nath Nagar, Haridwar, Uttarakhand 249401</a></div>
+                                                <div class="unit-body"><p > Railway Rd, near chitra cinema, Sharvan Nath Nagar, Haridwar, Uttarakhand 249401</a></div>
                                             </div>
                                         </li>
                                     </ul>
@@ -55,10 +55,10 @@
                                 <div class="wow slideInLeft" data-wow-delay="0s">
                                     <h6 class="text-spacing-100 text-uppercase">Quick links</h6>
                                     <ul class="row-6 list-0 list-marked list-marked-md list-marked-secondary list-custom-2">
-                                        <li><a href="about.html">About us</a></li>
-                                        <li><a href="#">Our Tours</a></li>
-                                        <li><a href="#">Our Team</a></li>
-                                        <li><a href="#gallery">Gallery</a></li>
+                                        <li><a href="about.php">About us</a></li>
+                                        <li><a href="domestic-tour.php">Our Tours</a></li>
+                                        <li><a href="contact-us.php">Our Team</a></li>
+                                        <li><a href="index.php">Gallery</a></li>
 
                                     </ul>
                                     <div class="group-md group-middle justify-content-sm-start"><a class="button button-lg button-primary button-ujarak" href="contact-us.php">Get in touch</a></div>

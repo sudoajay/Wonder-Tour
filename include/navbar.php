@@ -28,16 +28,16 @@
                             <div class="rd-navbar-nav-wrap">
                                 <ul class="list-inline list-inline-md rd-navbar-corporate-list-social">
                                     <li>
-                                        <a class="icon fa fa-facebook" href=""></a>
+                                        <a class="icon fa fa-facebook" href="#"></a>
                                     </li>
                                     <li>
-                                        <a class="icon fa fa-twitter" href=""></a>
+                                        <a class="icon fa fa-twitter" href="#"></a>
                                     </li>
                                     <li>
-                                        <a class="icon fa fa-google-plus" href=""></a>
+                                        <a class="icon fa fa-google-plus" href="#"></a>
                                     </li>
                                     <li>
-                                        <a class="icon fa fa-instagram" href=""></a>
+                                        <a class="icon fa fa-instagram" href="#"></a>
                                     </li>
                                     <li><a href="">log in</a></li>
                                 </ul>

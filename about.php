@@ -217,7 +217,7 @@ include('include/navbar.php')
                     <!-- Quote Lisa-->
                     <article class="quote-lisa">
                         <div class="quote-lisa-body">
-                            <a class="quote-lisa-figure" href=""><img class="img-circles" src="images/uttarakhand tour pack/download.jpg" alt="" width="100" height="100" /></a>
+                           <img class="img-circles" src="images/uttarakhand tour pack/download.jpg" alt="" width="100" height="100" /></a>
                             <div class="quote-lisa-text">
                                 <p class="q">I had an amazing holiday at Kerala and all thanks to Wonder Tour and your entire team who had done all great arrangements.</p>
                             </div>
@@ -228,7 +228,7 @@ include('include/navbar.php')
                     <!-- Quote Lisa-->
                     <article class="quote-lisa">
                         <div class="quote-lisa-body">
-                            <a class="quote-lisa-figure" href=""><img class="img-circles" src="images/uttarakhand tour pack/download1.png" alt="" width="100" height="100" /></a>
+                           <img class="img-circles" src="images/uttarakhand tour pack/download1.png" alt="" width="100" height="100" /></a>
                             <div class="quote-lisa-text">
                                 <p class="q">We had the most remarkable family tour with Wonder Tour. Not only everything was perfect, but we felt, in every instance, that our guides and our gulet crew truly.</p>
                             </div>
@@ -239,7 +239,7 @@ include('include/navbar.php')
                     <!-- Quote Lisa-->
                     <article class="quote-lisa">
                         <div class="quote-lisa-body">
-                            <a class="quote-lisa-figure" href=""><img class="img-circles" src="images/uttarakhand tour pack/images1.png" alt="" width="100" height="100" /></a>
+                            <img class="img-circles" src="images/uttarakhand tour pack/images1.png" alt="" width="100" height="100" /></a>
                             <div class="quote-lisa-text">
                                 <p class="q">Planning to go on an excursion? Then sit back and relax while Wonder Tour plans an amazing trip for you for a nominal charge..! I had a great time on my trip, didn’t have to worry about anything, itinerary was thoughtfully
                                     curated.

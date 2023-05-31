@@ -293,7 +293,7 @@ include('include/navbar.php')
                         <!-- Team Modern-->
                         <article class="team-modern">
                             <div class="team-modern-header">
-                                <a class="team-modern-figure" href="#"><img class="img-circles" src="images/amit.jpg" alt="" width="118" height="118" /></a>
+                                <img class="img-circles" src="images/amit.jpg" alt="" width="118" height="118" /></a>
                                 <svg x="0px" y="0px" width="270px" height="70px" viewbox="0 0 270 70" enable-background="new 0 0 270 70" xml:space="preserve">
                     <g>
                       <path fill="#161616" d="M202.085,0C193.477,28.912,166.708,50,135,50S76.523,28.912,67.915,0H0v70h270V0H202.085z"></path>
@@ -311,7 +311,7 @@ include('include/navbar.php')
                         <!-- Team Modern-->
                         <article class="team-modern">
                             <div class="team-modern-header">
-                                <a class="team-modern-figure" href="#"><img class="img-circles" src="images/raj.jpg" alt="" width="118" height="118" /></a>
+                                <img class="img-circles" src="images/raj.jpg" alt="" width="118" height="118" /></a>
                                 <svg x="0px" y="0px" width="270px" height="70px" viewbox="0 0 270 70" enable-background="new 0 0 270 70" xml:space="preserve">
                     <g>
                       <path fill="#161616" d="M202.085,0C193.477,28.912,166.708,50,135,50S76.523,28.912,67.915,0H0v70h270V0H202.085z"></path>
@@ -329,7 +329,7 @@ include('include/navbar.php')
                         <!-- Team Modern-->
                         <article class="team-modern">
                             <div class="team-modern-header">
-                                <a class="team-modern-figure" href="#"><img class="img-circles" src="images/suresh.jpg" alt="" width="118" height="118" /></a>
+                              <img class="img-circles" src="images/suresh.jpg" alt="" width="118" height="118" /></a>
                                 <svg x="0px" y="0px" width="270px" height="70px" viewbox="0 0 270 70" enable-background="new 0 0 270 70" xml:space="preserve">
                     <g>
                       <path fill="#161616" d="M202.085,0C193.477,28.912,166.708,50,135,50S76.523,28.912,67.915,0H0v70h270V0H202.085z"></path>
@@ -347,7 +347,7 @@ include('include/navbar.php')
                         <!-- Team Modern-->
                         <article class="team-modern">
                             <div class="team-modern-header">
-                                <a class="team-modern-figure" href="#"><img class="img-circles" src="images/anurag.jpg" alt="" width="118" height="118" /></a>
+                               <img class="img-circles" src="images/anurag.jpg" alt="" width="118" height="118" /></a>
                                 <svg x="0px" y="0px" width="270px" height="70px" viewbox="0 0 270 70" enable-background="new 0 0 270 70" xml:space="preserve">
                     <g>
                       <path fill="#161616" d="M202.085,0C193.477,28.912,166.708,50,135,50S76.523,28.912,67.915,0H0v70h270V0H202.085z"></path>
@@ -355,7 +355,7 @@ include('include/navbar.php')
                   </svg>
                             </div>
                             <div class="team-modern-caption">
-                                <h6 class="team-modern-name"Anurag Singh </h6>
+                                <h6 class="team-modern-name">Anurag Singh </h6>
                                 <p class="team-modern-status">PR Manager</p>
                                 <h6 class="team-modern-phone">+91 7409247470</h6>
                             </div>

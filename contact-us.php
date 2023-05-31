@@ -22,8 +22,8 @@ include('include/navbar.php')
                             <div class="box-contacts-body">
                                 <div class="box-contacts-icon fl-bigmug-line-cellphone55"></div>
                                 <div class="box-contacts-decor"></div>
-                                <p class="box-contacts-link">+91 8954385910</p>
-                                <p class="box-contacts-link">+91 7409722666</p>
+                                <p class="box-contacts-link"><a href="tel:#">+91 8954385910</a></p>
+                                <p class="box-contacts-link"><a href="tel:#">+91 7409722666</a></p>
                             </div>
                         </article>
                     </div>
@@ -32,7 +32,7 @@ include('include/navbar.php')
                             <div class="box-contacts-body">
                                 <div class="box-contacts-icon fl-bigmug-line-up104"></div>
                                 <div class="box-contacts-decor"></div>
-                                <p class="box-contacts-link">Railway Rd, near chitra cinema, Sharvan Nath Nagar, Haridwar, Uttarakhand 249401</p>
+                                <p class="box-contacts-link">Railway Rd, near chitra cinema, Sharvan Nath Nagar, Haridwar, Uttarakhand 249401</a></p>
                             </div>
                         </article>
                     </div>
@@ -41,8 +41,8 @@ include('include/navbar.php')
                             <div class="box-contacts-body">
                                 <div class="box-contacts-icon fl-bigmug-line-chat55"></div>
                                 <div class="box-contacts-decor"></div>
-                                <p class="box-contacts-link">mail@wondertour.com</p>
-                                <p class="box-contacts-link">info@wondertour.com</p>
+                                <p class="box-contacts-link"><a href="mailto:#">mail@wondertour.com</a></p>
+                                <p class="box-contacts-link"><a href="mailto:#">info@wondertour.com</a></p>
                             </div>
                         </article>
                     </div>
