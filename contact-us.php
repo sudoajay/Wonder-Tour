@@ -8,14 +8,7 @@ include('include/header.php')
     include('include/navbar.php')
     ?>
 </header>
-<style>
-/* Style for positioning toast */
-.toast{
-    position: fixed; 
-    top: 80px; 
-    right: 10px;
-}
-</style>
+
 <!-- RD Google Map-->
 <section class="section section-fluid">
     <div class="mapouter">
@@ -92,19 +85,10 @@ include('include/header.php')
             <div class="title-classic-text">
                 <p>If you have any questions, just fill in the contact form, and we will answer you shortly.</p>
             </div>
-           
+
         </article>
-        <!-- <?php
-        if (isset($_POST["sbmt"])) { ?> -->
-            <!-- $cn=makeconnection();
-            $s="insert into contactus(Name,Email,Phone,Message) values('" . $_POST["name"] ."','" . $_POST["email"] ."','" . $_POST["phone"] ."','" . $_POST["message"] ."')";
-            mysqli_query($cn,$s);
-            mysqli_close($cn);
-            echo "<script>
-                alert('Record Save');
-            </script>";
-        <?php } ?> -->
-        <form class="rd-form rd-form-variant-2 rd-mailform" id="conactForm" data-form-type="contact" method="post"   >
+
+        <form class="rd-form rd-form-variant-2 rd-mailform" id="conactForm" data-form-type="contact" method="post">
             <div class="row row-14 gutters-14">
                 <div class="col-md-4">
                     <div class="form-wrap">
@@ -131,111 +115,18 @@ include('include/header.php')
                     </div>
                 </div>
             </div>
-            <button class="button button-primary button-pipaluk" type="button" onclick="addToDataBase()" name="sbmt">Send Message</button>
+            <button class="button button-primary button-pipaluk" type="button" onclick="addGetInTouchToDataBase()" name="sbmt">Send Message</button>
         </form>
-  
-    </div>
-    <div class="m-4">
-    
-    <div class="toast" id="mySuccessToast">
-        <div class="toast-header">
-                       <strong class="me-auto"><i class="bi-check-circle-fill"></i> Success!</strong>
-            <small></small>
-            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-        </div>
-        <div class="toast-body">
-           Thank you! Your message has been submitted.
-        </div>
+
     </div>
 
-    <div class="toast" id="myErrorToast">
-        <div class="toast-header">
-                       <strong class="me-auto"><i class="bi-exclamation-octagon-fill"></i> Error!</strong>
-            <small></small>
-            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-        </div>
-        <div class="toast-body">
-        Oops! There was an error submitting your message. Please try again later.
-        </div>
-    </div>
-</div>
+    
+   
 </section>
 
 <!-- Page Footer-->
 
-<script>
-        $("#mySuccessToast").toast("show");
 
-    function addToDataBase() {
-
-
-        var name = document.getElementById('contact-your-name-2').value
-        var email = document.getElementById('contact-email-2').value
-        var phone = document.getElementById('contact-phone-2').value
-        var message = document.getElementById('contact-message-2').value
-        var createdTime = createdTimeStamp();
-
-
-
-        request = jQuery.ajax({
-            type: 'POST',
-            url: 'http://localhost/wonder_tour/database/set-database-data.php',
-            dataType: 'text',
-            cors: true,
-            secure: true,
-            cache: false,
-            data: {
-                "functionName": "Get In Touch Table",
-                "Name": name,
-                "Email": email,
-                "Phone": phone,
-                "Message": message,
-                "Created": createdTime,
-
-            },
-            success: function(info) {
-
-                if (info == ("Successfull")) {
-                    document.getElementById("conactForm").reset();
-                   
-                    $("#mySuccessToast").toast("show");
-                  
-                } else {
-                    console.log(info)
-                    $("#myErrorToast").toast("show");
-                }
-
-            }
-        });
-
-        // Callback handler that will be called on success
-        request.done(function(response, textStatus, jqXHR) {
-            // Log a message to the console
-        });
-
-        // Callback handler that will be called on failure
-        request.fail(function(jqXHR, textStatus, errorThrown) {
-            // Log the error to the console
-
-        });
-
-        // Callback handler that will be called regardless
-        // if the request failed or succeeded
-        request.always(function() {
-            // Reenable the inputs
-
-        });
-
-    }
-
-    function createdTimeStamp() {
-        var d1 = new Date()
-        d1.setHours(d1.getHours() + (5))
-        d1.setMinutes(d1.getMinutes() + 30)
-        return d1.toISOString().slice(0, 19).replace('T', ' ');
-
-    }
-</script>
 
 <?php
 include('include/footer.php')

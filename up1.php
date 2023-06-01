@@ -110,47 +110,35 @@ include('include/navbar.php')
                     </p>
                 </div>
             </article>
-            <?php
-            if(isset($_POST["sbmt"]))
-            { ?>
-                $cn=makeconnection();
-                $s="insert into booking(Name,Email,Phone,Noofperson) values('" . $_POST["name"] ."','" . $_POST["email"] ."','" . $_POST["phone"] ."','" . $_POST["numberofperson"] ."')";	
-                
-                
-                    mysqli_query($cn,$s);
-                    mysqli_close($cn);
-                echo "<script>alert('Record Save');</script>";
-            <?php }
-            ?>
-            <form class="rd-form rd-form-variant-2 rd-mailform" data-form-output="form-output-global" data-form-type="contact" method="post" action="bat/rd-mailform.php">
-                <div class="row row-14 gutters-14">
-                    <div class="col-12">
-                        <div class="form-wrap">
-                            <input class="form-input" id="contact-your-name-2" type="text" name="name" data-constraints="@Required">
-                            <label class="form-label" for="contact-your-name-2">Your Name</label>
-                        </div>
-                    </div>
-                    <div class="col-12">
-                        <div class="form-wrap">
-                            <input class="form-input" id="contact-email-2" type="email" name="email" data-constraints="@Email @Required">
-                            <label class="form-label" for="contact-email-2">E-mail</label>
-                        </div>
-                    </div>
-                    <div class="col-12">
-                        <div class="form-wrap">
-                            <input class="form-input" id="contact-phone-2" type="text" name="phone" data-constraints="@Numeric">
-                            <label class="form-label" for="contact-phone-2">Phone</label>
-                        </div>
-                    </div>
-                    <div class="col-12">
-                        <div class="form-wrap">
-                            <label class="form-label" for="contact-message-2">Number of persons</label>
-                            <input class="form-input" id="contact-message-2" type="Number" name="numberofperson" data-constraints="@Required">
-                        </div>
+            <form class="rd-form rd-form-variant-2 rd-mailform" id="conactForm" data-form-output="form-output-global" data-form-type="contact" method="post">
+            <div class="row row-14 gutters-14">
+                <div class="col-12">
+                    <div class="form-wrap">
+                        <input class="form-input" id="contact-your-name-2" type="text" name="name" data-constraints="@Required">
+                        <label class="form-label" for="contact-your-name-2">Your Name</label>
                     </div>
                 </div>
-                <button class="button button-primary button-pipaluk" type="submit" name="sbmt">Book Varanasi Tour </button>
-            </form>
+                <div class="col-12">
+                    <div class="form-wrap">
+                        <input class="form-input" id="contact-email-2" type="email" name="email" data-constraints="@Email @Required">
+                        <label class="form-label" for="contact-email-2">E-mail</label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-wrap">
+                        <input class="form-input" id="contact-phone-2" type="text" name="phone" data-constraints="@Numeric">
+                        <label class="form-label" for="contact-phone-2">Phone</label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-wrap">
+                        <label class="form-label" for="contact-message-2">Number of persons</label>
+                        <input class="form-input" id="contact-message-2" type="Number" name="numberofperson" data-constraints="@Numeric">
+                    </div>
+                </div>
+            </div>
+            <button class="button button-primary button-pipaluk" id="contact-button-2" onclick="addBookingTableToDataBase()" type="button" name="sbmt">Book Uttar Pradesh Tour </button>
+        </form>
         </div>
     </section>
     <!-- Page Footer-->

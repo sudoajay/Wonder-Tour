@@ -48,32 +48,22 @@ function insertBookingData()
     } else {
         ini_set("display_errors", 1);
         error_reporting(E_ALL);
-        // $name = $_POST['Name'];
-        // $email = $_POST['Email'];
-        // $phone = $_POST['Phone'];
+        $name = $_POST['Name'];
+        $email = $_POST['Email'];
+        $phone = $_POST['Phone'];
+        $numberOfPerson = $_POST['NumberOfPerson'];
+        $location = $_POST['Location'];
 
-        // $message = $_POST['Message'];
-        // $information = $_POST['Information'];
-        // $subscriptionPlan = $_POST['SubscriptionPlan'];
-
-
-        // $createdTimeStamp = $_POST['created'];
-        // $expireTimeStamp = $_POST['expire'];
-
-        // $paymentGateWay = $_POST['paymentGateWay'];
-        // $paymentId = $_POST['paymentId'];
-        // $orderId = $_POST['orderId'];
-        // $signature = $_POST['signature'];
-        // $payerEmail = $_POST['payerEmail'];
+        $created = $_POST['Created'];
+       
+        //insert query
+        $qu = "INSERT INTO $bookingTable( `Name`, `Email`, `Phone`, `NumberOfPerson`,`Location`,`Created`) 
+        VALUES ( '$name','$email','$phone','$numberOfPerson','$location','$created')";
 
 
-        // //insert query
-        // $qu = "INSERT INTO $bookingTable( `Email`, `FullName`, `PhoneNumber`, `Address`, `Information`, `SubscriptionPlan`, `IsAdded`, `Created`, `Expire`, `IsExpired`, `paymentGateWay`, `paymentId`, `orderId`, `signature`, `payerEmail`,`IsHide`) 
-        // VALUES ( '$email','$fullName','$phoneNumber','$address','$information','$subscriptionPlan', 0, '$createdTimeStamp', '$expireTimeStamp',0, '$paymentGateWay','$paymentId','$orderId','$signature','$payerEmail' , 0 )";
-        // //query execution
-        // if ($conn->query($qu) === TRUE)
-        //     echo "Inserted Successfully " .  $callingFunctionGet ;
-        // else echo "Insert Failed data" . $conn->error;
+        if ($conn->query($qu) === TRUE)
+        echo "Successfull";
+        else echo "Insert Failed data" . $conn->error;
 
 
         $conn->close();
