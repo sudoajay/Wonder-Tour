@@ -63,11 +63,12 @@ function getAllDataTable()
 {
     global $conn, $bookingTable, $getInTouchTable;
     // Connection Check
-    ini_set('display_errors', 1);
-    error_reporting(E_ALL);
+   
     if (!$conn) {
         die('Connection failed here: ');
     } else {
+        ini_set('display_errors', 1);
+        error_reporting(E_ALL);
         $dataName = $_GET['DataName'];
 
         switch ($dataName) {
@@ -91,12 +92,14 @@ function getAllDataTable()
 
             while ($row = mysqli_fetch_array($result)) {
                 echo '<tr>';
-                echo "<td>" . $row['ID'] . '</td>';
-                echo "<td>" . $row['Name'] . '</td>';
-                echo "<td>" . $row['Email'] . '</td>';
-                echo "<td>" . $row['Phone'] . '</td>';
-                echo "<td>" . $row['NumberOfPerson'] . '</td>';
-                echo "<td>" . $row['Location'] . '</td>';
+                echo "<td data-th='ID'>" . $row['ID'] . '</td>';
+                echo "<td data-th='Name'>" . $row['Name'] . '</td>';
+                echo "<td data-th='Email'>" . $row['Email'] . '</td>';
+                echo "<td data-th='Phone'>" . $row['Phone'] . '</td>';
+                echo "<td data-th='NumberOfPerson'>" . $row['NumberOfPerson'] . '</td>';
+                echo "<td data-th='Location'>" . $row['Location'] . '</td>';
+                echo "<td data-th='Created'>" . $row['Created'] . '</td>';
+
                 echo '</tr>';
             }
            
@@ -109,6 +112,8 @@ function getAllDataTable()
                 echo "<td data-th='Email'>" . $row['Email'] . '</td>';
                 echo "<td  data-th='Phone'>" . $row['Phone'] . '</td>';
                 echo "<td data-th='Message'>" . $row['Message'] . '</td>';
+                echo "<td data-th='Created'>" . $row['Created'] . '</td>';
+
                 echo '</tr>';
             }
         }
